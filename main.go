@@ -48,8 +48,8 @@ func getSavePath() (string, error) {
 	return homeDir + "/.task.json", nil
 }
 
-func checkArgCount(args []string, Operation int) error {
-	switch Operation {
+func checkArgCount(args []string, op Operation) error {
+	switch op {
 	case ADD, DEL, TOGGLE:
 		if len(args) < 3 {
 			return errors.New("too few arguments")
@@ -75,7 +75,7 @@ task <command> [arguments]
 
 help			show this message
 add [text]		add a task
-edit [id, text]		edit a task
+edit <id> <text>	edit a task
 del [id]		delete a task
 done [id]		toggle task completion
 list 			list all tasks
@@ -125,6 +125,10 @@ func handleEdit(args []string, tasks *[]Task) {
 	}
 
 	index, err := strconv.Atoi(args[2])
+	if err != nil {
+		printErr(err)
+		os.Exit(1)
+	}
 	text := args[3]
 	*tasks, err = EditTask(*tasks, index-1, text)
 	if err != nil {
