@@ -16,3 +16,18 @@ Now simply run the app!
 ```
 $ ./task
 ```
+
+## Features
+Task currently supports a few basic operations:
+* Adding tasks
+* Deleting tasks individually
+* Changing a task's completion state
+* Clearing tasks.json
+
+Advanced features are in progress, along with a refactor of the codebase
+
+### Planned features
+* Editing tasks
+* Categorizing tasks
+* Task timestamps
+* Prettier
