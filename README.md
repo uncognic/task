@@ -20,6 +20,7 @@ $ ./task
 ## Features
 Task currently supports a few basic operations:
 * Adding tasks
+* Editing tasks
 * Deleting tasks individually
 * Changing a task's completion state
 * Clearing tasks.json
@@ -27,7 +28,6 @@ Task currently supports a few basic operations:
 Advanced features are in progress, along with a refactor of the codebase
 
 ### Planned features
-* Editing tasks
 * Categorizing tasks
 * Task timestamps
 * Prettier
